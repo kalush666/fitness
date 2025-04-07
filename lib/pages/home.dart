@@ -166,30 +166,41 @@ class _HomePageState extends State<HomePage> {
 
   Container categoriesList() {
     return Container(
-      height: 150,
-      child: ListView.builder(
+      height: 120,
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: Listcategories.length,
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        separatorBuilder: (context, index) => const SizedBox(width: 25),
         itemBuilder: (context, index) {
           final category = Listcategories[index];
           return Container(
-            margin: EdgeInsets.only(left: 20),
-            padding: EdgeInsets.all(10),
+            width: 100,
             decoration: BoxDecoration(
-              color: category.boxColor,
-              borderRadius: BorderRadius.circular(15),
+              color: category.boxColor.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SvgPicture.asset(category.iconPath, height: 40, width: 40),
-                SizedBox(height: 10),
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(category.iconPath),
+                  ),
+                ),
                 Text(
                   category.name,
-                  style: TextStyle(
-                    color: Colors.white,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
                     fontSize: 14,
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
