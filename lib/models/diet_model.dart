@@ -6,6 +6,7 @@ class DietModel {
   String level;
   String duration;
   String calorie;
+  Color boxColor;
   bool viewIsSelected;
 
   DietModel({
@@ -14,6 +15,7 @@ class DietModel {
     required this.level,
     required this.duration,
     required this.calorie,
+    required this.boxColor,
     required this.viewIsSelected,
   });
 
@@ -25,6 +27,7 @@ class DietModel {
         level: 'Easy',
         duration: '30mins',
         calorie: '180kcal',
+        boxColor: Colors.orange,
         viewIsSelected: true,
       ),
       DietModel(
@@ -33,6 +36,7 @@ class DietModel {
         level: 'Easy',
         duration: '20mins',
         calorie: '230kcal',
+        boxColor: Colors.pink,
         viewIsSelected: false,
       ),
     ];
