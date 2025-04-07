@@ -5,6 +5,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(appBar: AppBar());
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Breakfast",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        centerTitle: true,
+      ),
+    );
   }
 }
